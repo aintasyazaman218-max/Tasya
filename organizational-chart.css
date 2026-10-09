@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Navigation bar (unchanged) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 30px;
+    color: black;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-left a, .nav-right a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+    color: #00bcd4;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* Organizational Chart Section */
+.orgchart {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 40px 0;
+}
+
+.org-tree, .org-tree ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.org-tree ul {
+    margin-top: 40px;
+}
+
+.org-tree li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* Connector lines */
+.org-tree li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.org-tree li:only-child::before {
+    display: none;
+}
+
+.org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid #ccc;
+    height: 20px;
+    margin: auto;
+}
+
+/* Rectangular Role Cards with Color */
+.role-card {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    border-left: 6px solid #00bcd4;
+    border-radius: 8px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+    font-family: 'Orbitron', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+}
+
+.role-card h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: #0077cc;
+}
+
+.role-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Optional: Different colors for levels */
+.role-card:nth-child(1) {
+    background: linear-gradient(135deg, #cdd6f7, #9daaff);
+    border-left-color: #060e69;
+}
+
+.role-card:nth-child(2) {
+    background: linear-gradient(135deg, #dcedc8, #c5e1a5);
+    border-left-color: #8bc34a;
+}
+
+.role-card:nth-child(3) {
+    background: linear-gradient(135deg, #f8bbd0, #f48fb1);
+    border-left-color: #e91e63;
+}
